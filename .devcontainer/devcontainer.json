@@ -1,0 +1,27 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.106.0/containers/java-12
+{
+	"image": "zmaker123/aci-awscli-ubi:2-8.2-latest",
+	"remoteUser": "me",
+	"mounts": [
+		"source=${localWorkspaceFolder}/containerfs,target=/home/me,type=bind,consistency=cached"
+	],
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"git.ignoreLegacyWarning": true
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": []
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}

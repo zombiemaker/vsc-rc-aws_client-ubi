@@ -1,0 +1,4 @@
+.aws/
+.vscode-server
+.bash_history
+.gitconfig
