@@ -1,0 +1,140 @@
+= Visual Studio Code Workspace Template: Terraform Development For AWS With Remote Containers
+
+This is a template Visual Studio Code workspace for developing AWS automation programs using Terraform and Kubernetes Operations (kops).
+
+It uses a remote development container that has all of the tools you need to interact with AWS.  It stores programs and configurations in a directory called containerfs, which is mounted to the container user home directory.  This enables the persistence of credentials and configurations so that you do not have to repeatedly create them whenever you start a new development container ON THE SAME WORKSTATION.  For security reasons, you should not be storing these credentials in a Git repository.  If you switch to another workstation, you will have to provide the credentials and configurations again.
+
+== Save Workspace As A Template
+
+. Install the Visual Studio Code extension called "Project Templates" by cantonios.
+. Press Control+Shift+P
+. Type "Project: Save Project as Template"
+. Select "Project: Save Project as Template" option that appears
+. Enter a name for the workspace template
+
+== Create Workspace From Template
+
+. Create a folder for a new workspace using Windows Explorer
+. Open the folder using Visual Studio Code
+. Press Control+Shift+P
+. Type "Project: Create Project from Template"
+. Select "Project: Create Project from Template" option that appears
+. Select the workspace template that you created from the previous steps
+
+== Switch To Remote Container Mode
+
+. Click on the lower-left corner of the Visual Studio Code window
+. Select "Remote-Containers: Reopen in Container"
++
+This will download the container image and instantiate a development container for you.
+
+== Configure AWS Client
+
+. After you are in container mode, open a terminal within Visual Studio Code
+. Check your current directory
++
+----
+pwd
+----
++
+The response should be something like "/workspaces/<name of your directory>"
+
+. List the contents of your current directory
++
+----
+ls -la
+
+total 4
+drwxrwxrwx 1 root root    0 May  6 17:08 .
+drwxr-xr-x 3 root root 4096 May  6 17:09 ..
+drwxrwxrwx 1 root root    0 May  6 17:08 .devcontainer
+drwxrwxrwx 1 root root 4096 May  6 17:08 .git
+-rwxr-xr-x 1 root root   45 May  6 17:08 .gitignore
+-rwxr-xr-x 1 root root  837 May  6 17:08 README.md
+drwxrwxrwx 1 root root    0 May  6 17:10 containerfs
+----
++
+The containerfs directory is mounted to the container Linux user home directory.  To see this, change to the containerfs directory and list its contents.
++
+----
+cd containerfs
+ls -la
+
+total 0
+drwxrwxrwx 1 root root   0 May  6 17:10 .
+drwxrwxrwx 1 root root   0 May  6 17:08 ..
+drwxrwxrwx 1 root root   0 May  6 17:10 .aws
+-rwxr-xr-x 1 root root 250 May  6 17:09 .gitconfig
+drwxrwxrwx 1 root root   0 May  6 17:09 .vscode-server
+----
+
+. Check your username
++
+----
+whoami
+
+me
+----
+
+. Change to the "me" user home directory
++
+----
+cd ~
+----
+
+. Check your current path
++
+----
+pwd
+
+/home/me
+----
+
+. Check the contents of the current directory
++
+----
+ls -la
+
+total 4
+drwxrwxrwx 1 root root    0 May  6 17:10 .
+drwxr-xr-x 1 root root 4096 May  6 16:17 ..
+drwxrwxrwx 1 root root    0 May  6 17:10 .aws
+-rwxr-xr-x 1 root root  250 May  6 17:09 .gitconfig
+drwxrwxrwx 1 root root    0 May  6 17:09 .vscode-server
+----
+
+. Notice that they are the same contents
+. Create an empty file called "testfile"
++
+----
+touch testfile
+----
+
+. List the contents of the directory
++
+----
+ls -la
+
+total 4
+drwxrwxrwx 1 root root    0 May  6 17:30 .
+drwxr-xr-x 1 root root 4096 May  6 16:17 ..
+drwxrwxrwx 1 root root    0 May  6 17:10 .aws
+-rwxr-xr-x 1 root root  250 May  6 17:09 .gitconfig
+drwxrwxrwx 1 root root    0 May  6 17:09 .vscode-server
+-rwxr-xr-x 1 root root    0 May  6 17:30 testfile
+----
+
+. Look at the Explorer panel in Visual Studio Code and expand the containerfs folder
+. You will notice that the testfile is also listed there
+. Change to the containerfs folder under the workspace folder
++
+----
+cd /workspaces/<name of your folder>/containerfs
+----
+
+. List the contents of that directory
++
+----
+ls -la
+----
++ You should see the same contents that was in the home directory of the "me" user.

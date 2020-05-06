@@ -1,5 +1,0 @@
-# Visual Studio Code Workspace Template: Terraform Development For AWS With Remote Containers
-
-This is a template Visual Studio Code workspace for developing AWS automation programs using Terraform and Kubernetes Operations (kops).
-
-It uses a remote development container that has all of the tools you need to interact with AWS.  It stores programs and configurations in a directory called containerfs, which is mounted to the container user home directory.  This enables the persistence of credentials and configurations so that you do not have to repeatedly create them whenever you start a new development container ON THE SAME WORKSTATION.  For security reasons, you should not be storing these credentials in a Git repository.  If you switch to another workstation, you will have to provide the credentials and configurations again.
