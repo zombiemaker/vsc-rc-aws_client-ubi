@@ -5,3 +5,6 @@
 .python_history
 .terraform/
 .terraform.d/
+.cache/
+.kube/
+.packer.d/
