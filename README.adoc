@@ -155,3 +155,7 @@ cd /workspaces/<name of your folder>/containerfs
 ls -la
 ----
 + You should see the same contents that was in the home directory of the "me" user.
+
+== Features
+
+* Fixed .postCreateCommandMarker issue - added bash completion for aws CLI, eksctl CLI, kubectl CLI

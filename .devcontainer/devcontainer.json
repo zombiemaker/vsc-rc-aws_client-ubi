@@ -13,6 +13,13 @@
 		"git.ignoreLegacyWarning": true
 	},
 
+	// Use this to delete the .postCreateCommandMarker file
+	"initializeCommand": "rm containerfs/.vscode-server/data/Machine/.postCreateCommandMarker",
+	// THIS IS NOT EXECUTED IF ~/.vscode-server/data/Machine/.postCreateCommandMarker file exists
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// This is needed to setup bash shell
+	"postCreateCommand": ["/entrypoint.sh", "ls"],
+
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [],
 
