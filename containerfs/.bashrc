@@ -57,7 +57,7 @@ alias tf="terraform"
 alias k="kubectl"
 
 # This .bashrc file will be COPIED to ~/.bashrc EVERY TIME a container is created from this image
-# Use the ~/.mybash file to add alias and functions
+# Use the ~/.mybashrc file to add alias and functions
 if [ ! -f ~/.mybashrc ]
 then
 	echo "Creating ~/.mybashrc file."
