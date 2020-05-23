@@ -1,10 +1,8 @@
-.aws/
-.vscode-server
-.bash_history
-.gitconfig
-.python_history
-.terraform/
-.terraform.d/
-.cache/
-.kube/
-.packer.d/
+# BE SURE TO AVOID COMMITTING YOUR SECURITY CREDENTIALS
+**/.*
+**/.*/
+**/~*
+**/*~
+!.gitignore
+!.gitattributes
+!.editorconfig
