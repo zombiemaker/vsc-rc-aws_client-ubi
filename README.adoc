@@ -17,6 +17,7 @@ Software components
 * Visual Studio Code Extensions
 ** Remote Development
 ** Remote - WSL
+** Remote - Container
 
 == Configurations
 
