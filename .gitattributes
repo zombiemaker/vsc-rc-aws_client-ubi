@@ -1,29 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@zmdsi 
-swisnl
-/
-gists
-11
-104
- Code
- Issues 0
- Pull requests 0 Actions
- Projects 0
- Wiki
- Security 0
- Insights
-gists/gitattributes/.gitattributes
-@RoachMech RoachMech Create .gitattributes gist
-482063c on Jul 5, 2018
-50 lines (48 sloc)  3.61 KB
-  
 .deployignore  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=4
 .editorconfig  text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=4
 .env.*         text eol=lf whitespace=blank-at-eol,-blank-at-eof,-space-before-tab,tab-in-indent,tabwidth=4
