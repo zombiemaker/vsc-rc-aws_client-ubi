@@ -14,7 +14,7 @@
 	},
 
 	// Use this to delete the .postCreateCommandMarker file
-	"initializeCommand": "rm containerfs/.vscode-server/data/Machine/.postCreateCommandMarker",
+	"initializeCommand": "if [ -f containerfs/.vscode-server/data/Machine/.postCreateCommandMarker ]; then rm containerfs/.vscode-server/data/Machine/.postCreateCommandMarker; fi",
 	// THIS IS NOT EXECUTED IF ~/.vscode-server/data/Machine/.postCreateCommandMarker file exists
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// This is needed to setup bash shell
@@ -24,7 +24,7 @@
 	"extensions": [],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"appPort": ["11100:8001"]
+	"appPort": ["11110:8001"]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "java -version",

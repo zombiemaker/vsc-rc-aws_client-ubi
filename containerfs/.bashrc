@@ -48,7 +48,7 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[36m\]AZURE\[\e[m\] \[\e[35m\]\d\[\e[m\] \[\e[35m\]\t\[\e[m\] [\[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]][\[\e[33m\]\w\[\e[m\]]\n> "
+export PS1="\[\e[36m\]AWS\[\e[m\] \[\e[35m\]\d\[\e[m\] \[\e[35m\]\t\[\e[m\] [\[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]][\[\e[33m\]\w\[\e[m\]]\n> "
 ############### CUSTOM PROMPT END
 
 export PATH=./:~/bin:~/scripts:$PATH
@@ -57,7 +57,7 @@ alias tf="terraform"
 alias k="kubectl"
 
 # This .bashrc file will be COPIED to ~/.bashrc EVERY TIME a container is created from this image
-# Use the ~/.mybashrc file to add alias and functions
+# Use the ~/.mybash file to add alias and functions
 if [ ! -f ~/.mybashrc ]
 then
 	echo "Creating ~/.mybashrc file."
@@ -67,3 +67,4 @@ then
 fi
 source ~/.mybashrc
 . /etc/profile.d/bash_completion.sh
+complete -C '/usr/local/aws-cli/v2/current/bin/aws_completer' aws
