@@ -19,6 +19,37 @@ Software components
 ** Remote - WSL
 ** Remote - Container
 
+== Cloning & Starting Visual Studio Code When Using Docker Desktop for Windows Integrated With WSL2
+
+. Start a WSL2 terminal session
+. Clone this git repo into your local WSL2 file system (do no use a path to the Windows file system from within WSL2)
+. Change your working directory to the directory where cloned contents are stored
+. Start Visual Studio Code from within WSL using the "code ." command
+. Check to see if you have the option to re-open the project using Remote Containers (select the lower-left corner and a pop-up menu should list the options available to you)
+
+.NOTE
+[NOTE]
+===============================
+The network configuration for the Windows OS and the WSL Linux distro you are using may affect your ability to communicate to network servers.  The following are some configuration variants:
+
+* Workstation connected to company network using network adapter installed on computer and internet traffic controlled with internet proxy
+* Workstation connected to company network using network adapter installed on docking station and internet traffic controlled with internet proxy
+* Workstation connected to non-company network without VPN to company network and internet traffic NOT controlled with internet proxy
+* Workstation connected to non-company network without VPN to company network and internet traffic controlled with internet proxy
+* Workstation connected to non-company network with VPN to company network and internet traffic NOT controlled with internet proxy
+* Workstation connected to non-company network with VPN to company network and internet traffic controlled with internet proxy
+
+You will need to understand your specific configuration and how to adjust things so that it will work with your environment.
+===============================
+
+== Cloning & Starting Visual Studio Code When Using Docker Desktop for Windows Integrated With Hyper-V
+
+When using Docker Desktop for Windows that is using a Hyper-V virtual machine to host Docker containers, there are issues and limitations with using WSL1 and Docker Desktop for Windows together.  For this setup to work, do not use Visual Studio Code Remote WSL extension.  Make sure that you start Visual Studio Code using local Windows and not the remote WSL connection.
+
+. Clone the git repo into your local Windows file system
+. Open the folder using Visual Studio Code
+. Check to see if you have the option to re-open the project using Remote Containers (select the lower-left corner and a pop-up menu should list the options available to you)
+
 == Configurations
 
 * Edit .devcontainer/devcontainer.json file if needed
@@ -32,6 +63,12 @@ Software components
 +
 ----
 "appPort": ["11100:8001"]
+----
+
+* Comment the following line if you are using Docker Desktop for Windows Integrated With Hyper-Visual
++
+----
+"initializeCommand": "if [ -f containerfs/.vscode-server/data/Machine/.postCreateCommandMarker ]; then rm containerfs/.vscode-server/data/Machine/.postCreateCommandMarker; fi",
 ----
 
 == Save Workspace As A Template
@@ -58,9 +95,13 @@ Software components
 +
 This will download the container image and instantiate a development container for you.
 
-== Configure AWS Client
+== Container User Home Directory & Visual Studio Project Folder contents
 
-. After you are in container mode, open a terminal within Visual Studio Code
+The Linux container user home directory is mounted to the containerfs folder located within the project folder.  This enables you to keep configuration and cached files that Linux CLI programs like awscli, kubectl, and terraform store in the Linux user home directory.  Whenever you start a new container instance, the files created from previous container instances will still be available for use.  
+
+DO NOT COMMIT these files to the git repository.  They may contain your security credentials.
+
+. After you are in development container mode, open a terminal within Visual Studio Code
 . Check your current directory
 +
 ----
@@ -170,7 +211,17 @@ ls -la
 +
 You should see the same contents that was in the home directory of the "me" user.
 
+== Container Image Contents
+
+The container image will already have the basic software needed to work with AWS.  Please read the README file located in the root folder within the container for further details.  The name of the file may have different extensions (e.g., no extension, .txt, .adoc, .md, etc.).
+
+----
+cd /
+ls -la
+more <name-of-readme-file>
+----
+
+
 == Features
 
 * Fixed .postCreateCommandMarker issue
-* Added bash completion for aws CLI, eksctl CLI, kubectl CLI
