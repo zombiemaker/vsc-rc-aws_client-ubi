@@ -24,7 +24,7 @@
 	"extensions": [],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"appPort": ["11110:8001"]
+	"appPort": ["11100:8001"]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "java -version",
