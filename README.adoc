@@ -27,7 +27,6 @@ Software components
 . Start Visual Studio Code from within WSL using the "code ." command
 . Check to see if you have the option to re-open the project using Remote Containers (select the lower-left corner and a pop-up menu should list the options available to you)
 
-.NOTE
 [NOTE]
 ===============================
 The network configuration for the Windows OS and the WSL Linux distro you are using may affect your ability to communicate to network servers.  The following are some configuration variants:
