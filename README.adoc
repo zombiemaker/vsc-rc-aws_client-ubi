@@ -167,7 +167,8 @@ cd /workspaces/<name of your folder>/containerfs
 ----
 ls -la
 ----
-+ You should see the same contents that was in the home directory of the "me" user.
++
+You should see the same contents that was in the home directory of the "me" user.
 
 == Features
 
