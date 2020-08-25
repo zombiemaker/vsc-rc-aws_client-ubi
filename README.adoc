@@ -168,7 +168,6 @@ ls -la
 total 4
 drwxrwxrwx 1 root root    0 May  6 17:10 .
 drwxr-xr-x 1 root root 4096 May  6 16:17 ..
-drwxrwxrwx 1 root root    0 May  6 17:10 .aws
 -rwxr-xr-x 1 root root  250 May  6 17:09 .gitconfig
 drwxrwxrwx 1 root root    0 May  6 17:09 .vscode-server
 ----
@@ -188,7 +187,6 @@ ls -la
 total 4
 drwxrwxrwx 1 root root    0 May  6 17:30 .
 drwxr-xr-x 1 root root 4096 May  6 16:17 ..
-drwxrwxrwx 1 root root    0 May  6 17:10 .aws
 -rwxr-xr-x 1 root root  250 May  6 17:09 .gitconfig
 drwxrwxrwx 1 root root    0 May  6 17:09 .vscode-server
 -rwxr-xr-x 1 root root    0 May  6 17:30 testfile
