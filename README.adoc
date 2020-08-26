@@ -10,9 +10,9 @@ This was created and used where the contents are stored WITHIN a Linux WSL distr
 
 Software components
 
-* Microsoft Windows 10 2004+
+* Microsoft Windows 10 2004+ (or a build that allows Docker Desktop for Windows to use WSL2)
 * Microsoft Windows Subsystem for Linux 2
-* Docker Desktop for Windows with WSL2 Extensions
+* Docker Desktop for Windows Inte WSL2 Extensions
 * Visual Studio Code
 * Visual Studio Code Extensions
 ** Remote Development
@@ -29,7 +29,7 @@ Software components
 
 [NOTE]
 ===============================
-The network configuration for the Windows OS and the WSL Linux distro you are using may affect your ability to communicate to network servers.  The following are some configuration variants:
+The network configuration for the Windows OS and the WSL Linux distro you are using may affect your ability to communicate to network services.  The following are some configuration variants:
 
 * Workstation connected to company network using network adapter installed on computer and internet traffic controlled with internet proxy
 * Workstation connected to company network using network adapter installed on docking station and internet traffic controlled with internet proxy
