@@ -67,7 +67,7 @@ git remote remove origin
 ----
 git remote add origin <url to your remote repo>
 git push origin master
----
+----
 . Open the folder using Visual Studio Code
 . Check to see if you have the option to re-open the project using Remote Containers (select the lower-left corner and a pop-up menu should list the options available to you)
 
