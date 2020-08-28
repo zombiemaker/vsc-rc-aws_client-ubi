@@ -24,6 +24,17 @@ Software components
 . Start a WSL2 terminal session
 . Clone this git repo into your local WSL2 file system (do no use a path to the Windows file system from within WSL2)
 . Change your working directory to the directory where cloned contents are stored
+. Remove the git remote to the original / upstream repo
++
+----
+git remote remove origin
+----
+. (Optional) Add a new git remote as your to your own remote repo and push changes to new remote
++
+----
+git remote add origin <url to your remote repo>
+git push origin master
+---
 . Start Visual Studio Code from within WSL using the "code ." command
 . Check to see if you have the option to re-open the project using Remote Containers (select the lower-left corner and a pop-up menu should list the options available to you)
 
@@ -46,6 +57,17 @@ You will need to understand your specific configuration and how to adjust things
 When using Docker Desktop for Windows that is using a Hyper-V virtual machine to host Docker containers, there are issues and limitations with using WSL1 and Docker Desktop for Windows together.  For this setup to work, do not use Visual Studio Code Remote WSL extension.  Make sure that you start Visual Studio Code using local Windows and not the remote WSL connection.
 
 . Clone the git repo into your local Windows file system
+. Remove the git remote to the original / upstream repo
++
+----
+git remote remove origin
+----
+. (Optional) Add a new git remote as your to your own remote repo and push changes to new remote
++
+----
+git remote add origin <url to your remote repo>
+git push origin master
+---
 . Open the folder using Visual Studio Code
 . Check to see if you have the option to re-open the project using Remote Containers (select the lower-left corner and a pop-up menu should list the options available to you)
 
