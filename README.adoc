@@ -212,6 +212,7 @@ You should see the same contents that was in the home directory of the "me" user
 
 The container image will already have the basic software needed to work with AWS.  Please read the README file located in the root folder within the container for further details.  The name of the file may have different extensions (e.g., no extension, .txt, .adoc, .md, etc.).
 
+The container image repo is link:https://hub.docker.com/repository/docker/zmaker123/aci-aws_client-ubi[located in DockerHub]
 ----
 cd /
 ls -la
