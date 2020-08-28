@@ -29,6 +29,13 @@ Software components
 ----
 git remote remove origin
 ----
++
+Or delete the .git directory or execute git init to not keep the change history
++
+----
+git init
+----
+
 . (Optional) Add a new git remote as your to your own remote repo and push changes to new remote
 +
 ----
